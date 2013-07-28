@@ -8,12 +8,14 @@ public class Reader {
 	
 	public static ArrayList<String> titles = new ArrayList<String>();
 	
+	
 	public static String readRss (String urlAdress){
 		try{
 		URL rssURL = new URL(urlAdress);
 		BufferedReader input = new BufferedReader(new InputStreamReader(rssURL.openStream()));
-		String sourceCode = "";
-		String line;
+		String line, title = null, link = null, desc = null;
+		
+		
 		while ((line = input.readLine()) != null){
 			if (line.contains("<title>")){
 				int start = line.indexOf("<title>");
@@ -23,10 +25,10 @@ public class Reader {
 				temp = temp.substring(0, stop);
 				titles.add(temp);
 				System.out.println(temp);
-			}
+			} 
 		}
 		input.close();
-		return sourceCode;
+		
 	}	catch (MalformedURLException ue){
 		System.out.println("Malformed URL");
 	}	catch (IOException ioe){

@@ -9,8 +9,6 @@ public class MainFrame extends JFrame {
 	private static final long serialVersionUID = 1L;
 
 	public static MainFrame instance = new MainFrame();
-
-	private JTextField textField;	
 	
 	JTextArea textArea;
 	
