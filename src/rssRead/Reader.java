@@ -1,9 +1,12 @@
 package rssRead;
 
 import java.net.*;
+import java.util.ArrayList;
 import java.io.*;
 
 public class Reader {
+	
+	public static ArrayList<String> titles = new ArrayList<String>();
 	
 	public static String readRss (String urlAdress){
 		try{
@@ -18,7 +21,8 @@ public class Reader {
 				temp = temp.replace("<title>", "");
 				int stop = temp.indexOf("</title>");
 				temp = temp.substring(0, stop);
-				sourceCode += temp+"\n";
+				titles.add(temp);
+				System.out.println(temp);
 			}
 		}
 		input.close();
