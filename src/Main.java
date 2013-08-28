@@ -9,12 +9,13 @@ public class Main {
         frame.setSize(800, 600);
         frame.setVisible(true);
         Reader.readRss(" http://beep.tv2.dk/rss.xml.php/index.xml");
+
         
-        int i = 1;
+ int i = 1;
         
-        while (!Reader.titles.isEmpty() && Reader.titles.size() > i){
-        	frame.appText(Reader.titles.get(i));
-        	frame.appText("\n \n");
+        while (!Reader.rssFeed.isEmpty() && Reader.rssFeed.size() > i){
+        	frame.appText(Reader.rssFeed.get(i).getTitle());
+        	frame.appText("\n" + Reader.rssFeed.get(i).getLink() + "\n \n");
         	i++;
         	
         }

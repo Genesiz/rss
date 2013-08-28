@@ -13,5 +13,19 @@ public class RssElement {
 		this.date = date;
 		this.link = link;
 	}
-
+	
+	public String getTitle(){
+		return title;
+	}
+	
+	public URL getLink(){
+		return link;
+	}
+	
+	public String getDesc(){
+		return desc;
+	}
+	public String getDate(){
+		return date;
+	}
 }
